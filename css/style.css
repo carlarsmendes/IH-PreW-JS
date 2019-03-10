@@ -1,14 +1,34 @@
-@import url('https://fonts.googleapis.com/css?family=Domine|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700');
+
 
 *{
   margin:0;
   padding:0;  
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Orbitron', sans-serif;
+  background-color:#080C28;
+  color:#0EE2B7;
+
 }
+/*Aplicar class na caixa de rover status; 
+Aplicar hover amarelo com cor #72862D
+Aplicar hover verde com cor #335B65 */
+
+html{
+  margin:3%;
+}
+
+.yellowColor{
+  color:#D1F500;
+  text-align:center;
+}
+
+.greenColor{
+  color:#0EE2B7;
+}
+
 
 h1,h2,h3{
   text-align:center;
-  font-family: 'Domine', serif; 
   padding:1% 0;
 }
 
@@ -23,20 +43,24 @@ h1,h2,h3{
 #matrixContainer{
   width:50vw;
   height:50vw;
-  background-color:#dee3ea;
+  background-image: url(../img/Grid-10.svg);
+  background-size: 100% 100%;
   margin:auto;
   position:relative;
 }
 
 #roverHtml{
-  width: 5vw;
-  height: 5vw;
+  width: 4vw;
+  height: 4vw;
+  margin:0.5vw;
   text-align:center;
   font-size:300%;
-  background-image: url(../img/Rover.svg);
+  background-image: url(../img/Rover2-green.svg);
   background-size: 100% 100%;
   position:absolute;
 }
+
+
 
 aside{
   width:40vw;
@@ -46,10 +70,24 @@ aside{
 
 button{
   text-align:center;
-  padding:1%;
-  border-radius:40px;
+  padding:2%;
   cursor:pointer;
-  background-color:teal;
-  color:white;
-  border:1px solid teal;
 }
+
+button:hover{
+  background-color: #335B65;
+}
+
+button #greenColor{
+  border:1px solid #0EE2B7;
+}
+
+button #yellowColor{
+  border:1px solid #D1F500;
+}
+
+button #roverStatus:hover{
+  border:1px solid #72862D;
+
+}
+

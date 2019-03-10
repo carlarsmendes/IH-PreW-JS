@@ -218,7 +218,6 @@ const btndirectionStatus = document.getElementById("currentDirection");
 
 btnLeft.addEventListener('click', function(){turnLeft(rover)});
 btnRight.addEventListener('click', function(){turnRight(rover)});
-// btnRight.addEventListener('click', turnRight(rover));
 
 btndirectionStatus.addEventListener('click', function(){showPosition(rover)});
 
@@ -228,7 +227,6 @@ btndirectionStatus.addEventListener('click', function(){showPosition(rover)});
 
 const btnForwards = document.getElementById("moveForward");
 btnForwards.addEventListener('click', function(){moveForward(rover)});
-
 
 const btnBackwards = document.getElementById("moveBackwards");
 btnBackwards.addEventListener('click', function(){moveBackwards(rover)});

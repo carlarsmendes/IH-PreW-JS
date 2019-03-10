@@ -15,20 +15,23 @@
     <div id="roverHtml"></div>
   </div>
   <aside>
-    <div id="roverInteraction">
+    
+    <div id="roverStatus" class="yellowColor">
+      <h3 class="yellowColor">_rover status_</h3>
+      <button id="currentDirection" class="yellowColor">position</button>
+      <button id="currentCoordinates" class="yellowColor">coordinates</button>
+      <button id="travelLog" class="yellowColor">travel log</button>
+    </div>
+    
+    <div id="roverInteraction" class="greenColor">
       <h3>Interacting with the Rover</h3>
-      <button id="turnLeft">Turn it Left</button>
-      <button id="turnRight">Turn it Right</button>
-      <button id="moveForward">Move Forward</button>
-      <button id="moveBackwards">Move Backwards</button>
+      <button id="turnLeft" class="greenColor">Turn it Left</button>
+      <button id="turnRight" class="greenColor">Turn it Right</button>
+      <button id="moveForward" class="greenColor">Move Forward</button>
+      <button id="moveBackwards" class="greenColor">Move Backwards</button>
     
     </div>
-    <div id="roverStatus">
-      <h3>My Rover Status</h3>
-      <button id="currentDirection">Current direction</button>
-      <button id="travelLog">My Travel Log</button>
-    </div>
-    
+
   </aside>
   <script src="javascripts/app.js"></script>
  </div>
