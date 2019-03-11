@@ -3,10 +3,10 @@
 
 *{
   margin:0;
-  padding:0;  
+  padding:0; 
+  background-color:#080C28; 
   font-family: 'Orbitron', sans-serif;
-  background-color:#080C28;
-  color:#0EE2B7;
+  
 
 }
 /*Aplicar class na caixa de rover status; 
@@ -14,7 +14,9 @@ Aplicar hover amarelo com cor #72862D
 Aplicar hover verde com cor #335B65 */
 
 html{
-  margin:3%;
+  margin:5%;
+  
+  color:#0EE2B7;
 }
 
 .yellowColor{
@@ -29,16 +31,46 @@ html{
 
 h1,h2,h3{
   text-align:center;
-  padding:1% 0;
 }
 
-#gameContainer {
-  display: flex;
+h1{
+  
+  font-size:3rem;
+}
+
+h3{
+  font-size:2rem;
+}
+
+
+p{
+  font-size:1.6rem;
+}
+
+#title{
+  padding:3% 0;
+}
+
+/* h2,h3{
+
+} */
+
+
+#sideContainer{
+  flex-direction: column;
+  justify-content: center;
 }
 
 .flexProperties{
   display: flex;
 }
+
+
+#roverStatus, #roverInteraction{
+margin:5%;
+}
+
+
 
 #matrixContainer{
   width:50vw;
@@ -47,6 +79,7 @@ h1,h2,h3{
   background-size: 100% 100%;
   margin:auto;
   position:relative;
+
 }
 
 #roverHtml{
@@ -74,20 +107,23 @@ button{
   cursor:pointer;
 }
 
-button:hover{
+#roverInteraction button:hover{
   background-color: #335B65;
 }
 
-button #greenColor{
+#roverInteraction button {
   border:1px solid #0EE2B7;
+  width:15vw;
+  margin:1%;
 }
 
-button #yellowColor{
+#roverStatus button{
   border:1px solid #D1F500;
+  width: 30vw;
+  margin:2%;
 }
 
-button #roverStatus:hover{
-  border:1px solid #72862D;
-
+#roverStatus button:hover{
+  background-color: #72862D;
 }
 

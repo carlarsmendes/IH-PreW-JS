@@ -214,7 +214,9 @@ for ( var i=0 ; i < commandList.length ; i++){
 const roverHtml = document.getElementById("roverHtml");
 const btnLeft =  document.getElementById("turnLeft");
 const btnRight =  document.getElementById("turnRight");
-const btndirectionStatus = document.getElementById("currentDirection");
+const btndirectionStatus = document.getElementById("currentPosition");
+const btnTravelLog = document.getElementById("travelLog");
+
 
 btnLeft.addEventListener('click', function(){turnLeft(rover)});
 btnRight.addEventListener('click', function(){turnRight(rover)});
