@@ -38,11 +38,11 @@ h1{
 }
 
 h2{
-  font-size:2.6vw;
+  font-size:2.4vw;
 }
 
 h3{
-  font-size:2.8vw;
+  font-size:2.3vw;
 }
 
 
@@ -132,5 +132,42 @@ button{
 
 #roverStatus button:hover{
   background-color: #72862D;
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+
+aside{
+  width:90vw;
+}
+
+   #sideContainer{
+    flex-direction: row;
+    justify-content: center;
+    width:90vw;
+  }
+
+  #gameContainer {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  #roverInteraction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 45vw;
+    display:inline;
+  }
+
+  #roverInteraction h3 {
+    flex-grow:4;
+  }
+
+
+
 }
 

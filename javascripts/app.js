@@ -30,7 +30,7 @@ function turnRight(rover){ //esta função vai depender do lado para qual o rove
       document.getElementById("roverHtml").style.transform = "rotate(+90deg)";
       break;
       case "S": rover.direction="W";
-      document.getElementById("roverHtml").style.transform = "rotate(-90deg)";
+      document.getElementById("roverHtml").style.transform = "rotate(270deg)";
       break;
       case "E": rover.direction="S";
       document.getElementById("roverHtml").style.transform = "rotate(180deg)";
@@ -53,7 +53,7 @@ function turnLeft(rover){
   // alert("turnLeft was called!"); (for debugging)
   switch (rover.direction){
       case "N":  rover.direction="W";
-      document.getElementById("roverHtml").style.transform = "rotate(-90deg)";
+      document.getElementById("roverHtml").style.transform = "rotate(270deg)";
       break;
       case "S": rover.direction="E";
       document.getElementById("roverHtml").style.transform = "rotate(90deg)";
@@ -222,7 +222,7 @@ ${rover.travelLog}`);
 const roverHtml = document.getElementById("roverHtml");
 const btnLeft =  document.getElementById("turnLeft");
 const btnRight =  document.getElementById("turnRight");
-const btndirectionStatus = document.getElementById("currentPosition");
+// const btndirectionStatus = document.getElementById("currentPosition");
 const btnTravelLog = document.getElementById("travelLog");
 // const btnCommandReceiver = document.getElementById("commandReceiver");
 
@@ -254,5 +254,9 @@ btnBackwards.addEventListener('click', function(){moveBackwards(rover)});
 
 // btnAnswers.addEventListener('click', changePosition);
 
-document.getElementById("activePosition").innerHTML = `"${rover.direction}"`;
+document.getElementById("activePosition").innerHTML = ` "${rover.direction}"`;
+
+document.getElementById("activeCoordinates").innerHTML = ` [${rover.x},${rover.y}]`;
+
+
 
