@@ -261,7 +261,7 @@ btnBackwards.addEventListener('click', function(){moveBackwards(rover)});
 function showStatus (){
 
   document.getElementById("activePosition").innerHTML = ` "${rover.direction}"`;
-document.getElementById("activeCoordinates").innerHTML = ` [${rover.x},${rover.y}]`;
+document.getElementById("activeCoordinates").innerHTML = ` [${rover.x+1},${rover.y+1}]`;
 }
 
 
