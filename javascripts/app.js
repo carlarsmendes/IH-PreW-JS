@@ -25,6 +25,7 @@ const rover = {
 function turnRight(rover){ //esta função vai depender do lado para qual o rover está virado.
   console.log("turnRight was called!");
   rover.travelLog += "r" ;
+  showStatus ();
   switch (rover.direction){
       case "N": rover.direction="E";
       document.getElementById("roverHtml").style.transform = "rotate(+90deg)";
@@ -39,7 +40,8 @@ function turnRight(rover){ //esta função vai depender do lado para qual o rove
       document.getElementById("roverHtml").style.transform = "rotate(0deg)";
       break;
       default: console.log("no direction was selected");
-    } 
+    }
+    showStatus (); 
 }
 
       //rover.travelLog.push([rover.x,rover.y]);
@@ -66,7 +68,7 @@ function turnLeft(rover){
       break;
       default: console.log("no valid direction was selected");  
       } 
-
+      showStatus (); 
 }
 
 // The Iteration 3, moving the Rover Forward and Backwards
@@ -104,6 +106,7 @@ function moveY (){
       break;
       default: console.log("no valid direction was selected");
     } 
+    showStatus (); 
   }
 
 function moveBackwards(rover){
@@ -140,6 +143,7 @@ function moveY (){
       break;
       default: console.log("no valid direction was selected");
     } 
+    showStatus (); 
   }
 
 // Using For Loops to test the moveFormward and moveBackwards functions
@@ -254,9 +258,13 @@ btnBackwards.addEventListener('click', function(){moveBackwards(rover)});
 
 // btnAnswers.addEventListener('click', changePosition);
 
-document.getElementById("activePosition").innerHTML = ` "${rover.direction}"`;
+function showStatus (){
 
+  document.getElementById("activePosition").innerHTML = ` "${rover.direction}"`;
 document.getElementById("activeCoordinates").innerHTML = ` [${rover.x},${rover.y}]`;
+}
+
+
 
 
 
