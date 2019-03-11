@@ -73,19 +73,20 @@ function turnLeft(rover){
 
 
 function moveForward(rover){
-    console.log("moveForward was called!");
+    // console.log("moveForward was called!");
    // (x,y) inicial (1,1)  canto baixo, esquerdo ?
 MarsMaxX= 9;
 MarsMinX=0;
 MarsMaxY= 9;  
 MarsMinY=0;
+rover.travelLog += "f";
 
 function moveY (){
-  let measureY = 5*rover.y ;
+  let measureY = 4*rover.y ;
   return `${measureY}vw`};
 
   function moveX (){
-    let measureX = 5*rover.x ;
+    let measureX = 4*rover.x ;
     return `${measureX}vw`};
 
     switch (rover.direction){
@@ -106,19 +107,21 @@ function moveY (){
   }
 
 function moveBackwards(rover){
-    console.log("Backwards was called!");
+    // console.log("Backwards was called!");
     //aqui usando a função Max e Min indica que 9 será sempre o número máximo de X e de Y, e nunca será retornado nenhum número maior que esse. se for maximo nao vai mover, e se não vai mover na direcção de y ou x dependendo de para onde estiver virado inicialmenteMarsMaxX= 9;
 MarsMaxX= 9;
 MarsMinX=0;
 MarsMaxY= 9;  
 MarsMinY=0;
+rover.travelLog += "b";
+
 
 function moveY (){
-  let measureY = 5*rover.y ;
+  let measureY = 4*rover.y ;
   return `${measureY}vw`};
 
   function moveX (){
-    let measureX = 5*rover.x ;
+    let measureX = 4*rover.x ;
     return `${measureX}vw`};
 
 
@@ -149,24 +152,24 @@ function moveY (){
 
   //  Iteration 4 | Commands
   //var commandList="frfrlb";   
-var commandList="fffbrr"; //this should be made into an input box actioned by a button
+// var commandList="fffbrr"; //this should be made into an input box actioned by a button
 // commandReceiver(commandList);
 
-function commandReceiver(commandList){
-   for (i=0 ; i < commandList.length ; i++){
-     switch (commandList[i]){
-      case "f": moveForward(rover);
-      break;
-      case "b": moveBackwards(rover);
-      break;
-      case "l": turnLeft(rover);
-      break;
-      case "r": turnRight(rover);
-      break;
-      default: console.log(`"${commandList[i]}" was a not valid rover command`);
-    } 
-   }
-}
+// function commandReceiver(commandList){
+//    for (i=0 ; i < commandList.length ; i++){
+//      switch (commandList[i]){
+//       case "f": moveForward(rover);
+//       break;
+//       case "b": moveBackwards(rover);
+//       break;
+//       case "l": turnLeft(rover);
+//       break;
+//       case "r": turnRight(rover);
+//       break;
+//       default: alert(`"${commandList[i]}" was a not valid rover command`);
+//     } 
+//    }
+// }
 
  //  Iteration 5 | Commands, Tracking
 
@@ -181,33 +184,38 @@ function commandReceiver(commandList){
       //rover.travelLog.push(["r"]);
       //rover.travelLog += "r" ;                     
 
+      function showTravelLog(rover){
+        return alert(`FYI - Your Travel Log has recorded the following instructions:
+${rover.travelLog}`);
+      }
 
-function showPosition(rover){
-  return alert(`Your rover's direction is ${rover.direction} 
-  Your rover's position is ${rover.x},${rover.y}`);
-}
 
+     
 
-function commandReceiver(commandList){
-  //console.log( commandList.length  ); 
+// function commandReceiver(commandList){
+//   //console.log( commandList.length  ); 
+  
+//   // var commandList = prompt("Please enter your commands",`Use "r" or "l" for rotating right or left and "b" or "f" for backwards or forward`);
 
-for ( var i=0 ; i < commandList.length ; i++){
-  //console.log("switch (commandList[i])" );    
-  switch (commandList[i]){
-     case "f": moveForward(rover);
-     break;
-     case "b": moveBackwards(rover);
-     break;
-     case "l": turnLeft(rover);
-     break;
-     case "r": turnRight(rover);
-     break;
-     default: console.log(commandList[i]+" - was a not valid rover command");
-   }
+// for ( var i=0 ; i < commandList.length ; i++){
+//   //console.log("switch (commandList[i])" );    
+//   switch (commandList[i]){
+//      case "f": moveForward(rover);
+//      break;
+//      case "b": moveBackwards(rover);
+//      break;
+//      case "l": turnLeft(rover);
+//      break;
+//      case "r": turnRight(rover);
+//      break;
+//      default: alert(`"${commandList[i]}" was a not valid rover command`);
+//    }
   //console.log(rover); 
   //console.log( "I=" +i  ); 
-}
-}
+
+
+
+
 
   //Interacting with the DOM - Turning Left and Right
 
@@ -216,13 +224,16 @@ const btnLeft =  document.getElementById("turnLeft");
 const btnRight =  document.getElementById("turnRight");
 const btndirectionStatus = document.getElementById("currentPosition");
 const btnTravelLog = document.getElementById("travelLog");
+// const btnCommandReceiver = document.getElementById("commandReceiver");
+
 
 
 btnLeft.addEventListener('click', function(){turnLeft(rover)});
 btnRight.addEventListener('click', function(){turnRight(rover)});
 
-// btndirectionStatus.addEventListener('click', function(){showPosition(rover)});
+btnTravelLog.addEventListener('click', function(){showTravelLog(rover)});
 
+// btnCommandReceiver.addEventListener('click', function(){commandReceiver(commandList)});
 
 
  //Interacting with the DOM - Moving Forwards and Backwards 
@@ -236,19 +247,12 @@ btnBackwards.addEventListener('click', function(){moveBackwards(rover)});
 
 
 
-                
                  
 // function changePosition() {
-// document.getElementById('activePosition').textContent = `Your rover's direction is ${rover.direction} 
+// document.getElementById("activePosition").innerHTML = `"${rover.direction}"` 
 // Your rover's position is ${rover.x},${rover.y}`}
 
 // btnAnswers.addEventListener('click', changePosition);
 
-
-
-
-
-
-
-
+document.getElementById("activePosition").innerHTML = `"${rover.direction}"`;
 
