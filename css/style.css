@@ -136,7 +136,7 @@ button{
 
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
 
 
 aside{
@@ -165,6 +165,25 @@ aside{
 
   #roverInteraction h3 {
     flex-grow:4;
+  }
+
+
+  h1{
+    font-size:5vw;
+  }
+  
+  h2{
+    font-size:3.4vw;
+  }
+  
+  h3{
+    font-size:3.3vw;
+  }
+  
+  
+  #roverStatus p {
+    font-size:2.9vw;
+    margin:1% 0;
   }
 
 
