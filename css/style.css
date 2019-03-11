@@ -14,8 +14,8 @@ Aplicar hover amarelo com cor #72862D
 Aplicar hover verde com cor #335B65 */
 
 html{
-  margin:5%;
-  
+  margin:2%;
+  padding:2vw;
   color:#0EE2B7;
 }
 
@@ -43,8 +43,9 @@ h3{
 }
 
 
-p{
+#roverStatus p {
   font-size:1.6rem;
+  margin:1% 0;
 }
 
 #title{
@@ -86,11 +87,14 @@ margin:5%;
   width: 4vw;
   height: 4vw;
   margin:0.5vw;
+  padding:0;
   text-align:center;
   font-size:300%;
   background-image: url(../img/Rover2-green.svg);
   background-size: 100% 100%;
   position:absolute;
+  transition: transform 1s, top 1s, left 1s;
+  background-color: transparent;
 }
 
 

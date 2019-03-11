@@ -221,7 +221,7 @@ const btnTravelLog = document.getElementById("travelLog");
 btnLeft.addEventListener('click', function(){turnLeft(rover)});
 btnRight.addEventListener('click', function(){turnRight(rover)});
 
-btndirectionStatus.addEventListener('click', function(){showPosition(rover)});
+// btndirectionStatus.addEventListener('click', function(){showPosition(rover)});
 
 
 
@@ -232,3 +232,23 @@ btnForwards.addEventListener('click', function(){moveForward(rover)});
 
 const btnBackwards = document.getElementById("moveBackwards");
 btnBackwards.addEventListener('click', function(){moveBackwards(rover)});
+
+
+
+
+                
+                 
+// function changePosition() {
+// document.getElementById('activePosition').textContent = `Your rover's direction is ${rover.direction} 
+// Your rover's position is ${rover.x},${rover.y}`}
+
+// btnAnswers.addEventListener('click', changePosition);
+
+
+
+
+
+
+
+
+
