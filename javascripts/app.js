@@ -14,32 +14,40 @@ const rover = {
   x: 0,
   y: 0,
   travelLog: "",
-  obstacles: [[1,2],[4,5],[3,9]]
+  obstacles: [[1,2],[4,5],[3,9]],
+  angle: 0
   };
  
- 
+// Main variables declared
+
+const roverHtml = document.getElementById("roverHtml");
+
+  
 // The Iteration 2, Turning the Rover Left and Right
 // 
 // }
 
 function turnRight(rover){ //esta função vai depender do lado para qual o rover está virado.
-  console.log("turnRight was called!");
+ 
   rover.travelLog += "r" ;
   showStatus ();
-  switch (rover.direction){
+  rover.angle += 90;
+roverHtml.style.transform = `rotate(${rover.angle}deg)`;
+     // originally was:     document.getElementById("roverHtml").style.transform = "rotate(180deg)";
+    //  And in each line for each different direction, corresponding 90 -> E ; 180º -> S ; 270 -> W
+
+  switch (rover.direction)
+  {
       case "N": rover.direction="E";
-      document.getElementById("roverHtml").style.transform = "rotate(+90deg)";
       break;
       case "S": rover.direction="W";
-      document.getElementById("roverHtml").style.transform = "rotate(270deg)";
       break;
       case "E": rover.direction="S";
-      document.getElementById("roverHtml").style.transform = "rotate(180deg)";
       break;
       case "W": rover.direction="N";
-      document.getElementById("roverHtml").style.transform = "rotate(0deg)";
       break;
       default: console.log("no direction was selected");
+      
     }
     showStatus (); 
 }
@@ -51,20 +59,18 @@ function turnRight(rover){ //esta função vai depender do lado para qual o rove
 
 function turnLeft(rover){
   rover.travelLog += "l";
+  rover.angle -= 90;
+  roverHtml.style.transform = `rotate(${rover.angle}deg)`;
   // console.log("turnLeft was called!"); (for debugging)
   // alert("turnLeft was called!"); (for debugging)
   switch (rover.direction){
       case "N":  rover.direction="W";
-      document.getElementById("roverHtml").style.transform = "rotate(270deg)";
       break;
       case "S": rover.direction="E";
-      document.getElementById("roverHtml").style.transform = "rotate(90deg)";
       break;
       case "E": rover.direction="N";
-      document.getElementById("roverHtml").style.transform = "rotate(0deg)";
       break;
       case "W": rover.direction="S";
-      document.getElementById("roverHtml").style.transform = "rotate(180deg)";
       break;
       default: console.log("no valid direction was selected");  
       } 
@@ -77,15 +83,15 @@ function turnLeft(rover){
 function moveForward(rover){
     // console.log("moveForward was called!");
    // (x,y) inicial (1,1)  canto baixo, esquerdo ?
-MarsMaxX= 9;
-MarsMinX=0;
-MarsMaxY= 9;  
-MarsMinY=0;
-rover.travelLog += "f";
+  MarsMaxX= 9;
+  MarsMinX=0;
+  MarsMaxY= 9;  
+  MarsMinY=0;
+  rover.travelLog += "f";
 
-function moveY (){
-  let measureY = 4*rover.y ;
-  return `${measureY}vw`};
+  function moveY (){
+    let measureY = 4*rover.y ;
+    return `${measureY}vw`};
 
   function moveX (){
     let measureX = 4*rover.x ;
@@ -93,16 +99,16 @@ function moveY (){
 
     switch (rover.direction){
       case "N": rover.y=Math.max(rover.y-1,MarsMinY);
-      document.getElementById("roverHtml").style.top = moveY();
+      roverHtml.style.top = moveY();
       break;
       case "S": rover.y=Math.min(rover.y+1,MarsMaxY);
-      document.getElementById("roverHtml").style.top = moveY();
+      roverHtml.style.top = moveY();
       break;
       case "E": rover.x=Math.min(rover.x+1,MarsMaxX);
-      document.getElementById("roverHtml").style.left = moveX ();
+      roverHtml.style.left = moveX ();
       break;
       case "W": rover.x=Math.max(rover.x-1,MarsMinX);
-      document.getElementById("roverHtml").style.left = moveX ();
+      roverHtml.style.left = moveX ();
       break;
       default: console.log("no valid direction was selected");
     } 
@@ -112,39 +118,39 @@ function moveY (){
 function moveBackwards(rover){
     // console.log("Backwards was called!");
     //aqui usando a função Max e Min indica que 9 será sempre o número máximo de X e de Y, e nunca será retornado nenhum número maior que esse. se for maximo nao vai mover, e se não vai mover na direcção de y ou x dependendo de para onde estiver virado inicialmenteMarsMaxX= 9;
-MarsMaxX= 9;
-MarsMinX=0;
-MarsMaxY= 9;  
-MarsMinY=0;
-rover.travelLog += "b";
+    MarsMaxX= 9;
+    MarsMinX=0;
+    MarsMaxY= 9;  
+    MarsMinY=0;
+    rover.travelLog += "b";
 
 
-function moveY (){
-  let measureY = 4*rover.y ;
-  return `${measureY}vw`};
+    // function moveY (){
+    //   let measureY = 4*rover.y ;
+    //   return `${measureY}vw`};
 
-  function moveX (){
-    let measureX = 4*rover.x ;
-    return `${measureX}vw`};
+    // function moveX (){
+    //   let measureX = 4*rover.x ;
+    //   return `${measureX}vw`};
 
 
-    switch (rover.direction){
-      case "S": rover.y=Math.max(rover.y-1,MarsMinY); //aqui mesmo que já esteja no extremo da matriz (y=8) nunca será mais do que 9, portanto a condição está aqui. Mas tmb poderia er criado um "if"
-      document.getElementById("roverHtml").style.top = moveY();
-      break;
-      case "N": rover.y=Math.min(rover.y+1,MarsMaxY);
-      document.getElementById("roverHtml").style.top = moveY();
-      break;
-      case "W": rover.x=Math.min(rover.x+1,MarsMaxX);
-      document.getElementById("roverHtml").style.left = moveX ();
-      break;
-      case "E": rover.x=Math.max(rover.x-1,0);
-      document.getElementById("roverHtml").style.left = moveX ();
-      break;
-      default: console.log("no valid direction was selected");
-    } 
-    showStatus (); 
-  }
+      switch (rover.direction){
+        case "S": rover.y=Math.max(rover.y-1,MarsMinY); //aqui mesmo que já esteja no extremo da matriz (y=8) nunca será mais do que 9, portanto a condição está aqui. Mas tmb poderia er criado um "if"
+        roverHtml.style.top = moveY();
+        break;
+        case "N": rover.y=Math.min(rover.y+1,MarsMaxY);
+        roverHtml.style.top = moveY();
+        break;
+        case "W": rover.x=Math.min(rover.x+1,MarsMaxX);
+        roverHtml.style.left = moveX ();
+        break;
+        case "E": rover.x=Math.max(rover.x-1,0);
+        roverHtml.style.left = moveX ();
+        break;
+        default: console.log("no valid direction was selected");
+      } 
+      showStatus (); 
+    }
 
 // Using For Loops to test the moveFormward and moveBackwards functions
 
@@ -181,8 +187,6 @@ function moveY (){
 // rover.travelLog = ""; -> Já foi incuído no objeto
 
 
-
-
    // -------- Questions about these--------------
     //rover.travelLog.push([rover.x,rover.y
       //rover.travelLog.push(["r"]);
@@ -192,8 +196,6 @@ function moveY (){
         return alert(`FYI - Your Travel Log has recorded the following instructions:
 ${rover.travelLog}`);
       }
-
-
      
 
 // function commandReceiver(commandList){
@@ -223,18 +225,16 @@ ${rover.travelLog}`);
 
   //Interacting with the DOM - Turning Left and Right
 
-const roverHtml = document.getElementById("roverHtml");
 const btnLeft =  document.getElementById("turnLeft");
 const btnRight =  document.getElementById("turnRight");
-// const btndirectionStatus = document.getElementById("currentPosition");
 const btnTravelLog = document.getElementById("travelLog");
-// const btnCommandReceiver = document.getElementById("commandReceiver");
 
+// const btnCommandReceiver = document.getElementById("commandReceiver");
+// const btndirectionStatus = document.getElementById("currentPosition");
 
 
 btnLeft.addEventListener('click', function(){turnLeft(rover)});
 btnRight.addEventListener('click', function(){turnRight(rover)});
-
 btnTravelLog.addEventListener('click', function(){showTravelLog(rover)});
 
 // btnCommandReceiver.addEventListener('click', function(){commandReceiver(commandList)});
@@ -243,11 +243,18 @@ btnTravelLog.addEventListener('click', function(){showTravelLog(rover)});
  //Interacting with the DOM - Moving Forwards and Backwards 
 
 const btnForwards = document.getElementById("moveForward");
-btnForwards.addEventListener('click', function(){moveForward(rover)});
 
 const btnBackwards = document.getElementById("moveBackwards");
+
+
+btnForwards.addEventListener('click', function(){moveForward(rover)});
+
 btnBackwards.addEventListener('click', function(){moveBackwards(rover)});
 
+
+const activePosition = document.getElementById("activePosition");
+
+const activeCoordinates = document.getElementById("activeCoordinates");
 
 
 
@@ -259,12 +266,20 @@ btnBackwards.addEventListener('click', function(){moveBackwards(rover)});
 // btnAnswers.addEventListener('click', changePosition);
 
 function showStatus (){
-
-  document.getElementById("activePosition").innerHTML = ` "${rover.direction}"`;
-document.getElementById("activeCoordinates").innerHTML = ` [${rover.x+1},${rover.y+1}]`;
+  activePosition.innerHTML = ` "${rover.direction}"`;
+  activeCoordinates.innerHTML = ` [${rover.x+1},${rover.y+1}]`;
 }
 
 
-
-
+window.addEventListener("keydown", function onEvent(event) {
+  if (event.key === "ArrowLeft") {
+    turnLeft(rover);
+  }else if(event.key === "ArrowRight"){
+    turnRight(rover);
+  }else if(event.key === "ArrowUp"){
+    moveForward(rover);
+  }else if(event.key === "ArrowDown"){
+    moveBackwards(rover);
+  }
+});
 
