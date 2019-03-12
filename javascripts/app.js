@@ -10,6 +10,7 @@
 // obstacles representa 3 objetos cada um com coordenadas fixas.
 
 const rover = {
+  name: "rover1",
   direction: "N",
   x: 0,
   y: 0,
@@ -125,13 +126,13 @@ function moveBackwards(rover){
     rover.travelLog += "b";
 
 
-    // function moveY (){
-    //   let measureY = 4*rover.y ;
-    //   return `${measureY}vw`};
+    function moveY (){
+      let measureY = 4*rover.y ;
+      return `${measureY}vw`};
 
-    // function moveX (){
-    //   let measureX = 4*rover.x ;
-    //   return `${measureX}vw`};
+    function moveX (){
+      let measureX = 4*rover.x ;
+      return `${measureX}vw`};
 
 
       switch (rover.direction){
