@@ -125,11 +125,12 @@ function moveBackwards(rover){
     MarsMinY=0;
     rover.travelLog += "b";
 
+    
 
     function moveY (){
       let measureY = 4*rover.y ;
       return `${measureY}vw`};
-
+  
     function moveX (){
       let measureX = 4*rover.x ;
       return `${measureX}vw`};
