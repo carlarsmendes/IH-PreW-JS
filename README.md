@@ -14,7 +14,7 @@
 <li>Create the functions <code>turnLeft()</code>  <code>turnRight()</code>  <code>moveForward()</code>  <code>moveBackwards()</code> </li>
 <li>Create a function that receives a list of commands</li>
 <li>Add a property called <code>travelLog()</code> which will track the movements of the rover</li>
-<li>b>BONUS:</b> Make sure your rover stays inside the limits of your 10x10 grid</li>
+<li><b>BONUS:</b> Make sure your rover stays inside the limits of your 10x10 grid</li>
 <li><b>BONUS:</b> Bring your rover to life</li>
 </ul>
 
