@@ -27,12 +27,10 @@
   <li>The Object oriented train of thought was hard to get into</li>
   <li>The amount of code and how to organize myself</li>
   <li>Not knowing yet very well how to manage Ubuntu, Visual Studio Code, and debug.</li>
-  <li>Making it responsive - Almost there, should've used the mobile-first approach</li>
 </ul>
 
 <h3><b>---Improvements for the future---</b></h3>
 <ul>
-  <li>Correct the bug of not having the animation from 0,0 to 0,1, etc</li>
   <li>Would like to create a class called rover so that the creation of more rovers was possible</li>
   <li>Apparition of random objects</li>
   <li>Gamification of some sort</li>
@@ -47,7 +45,11 @@
 </ul>
 
 <h3><b>---Unsolved problems---</b></h3>
-<p>All questions and challenges were answered.</p>
+<p>All questions and challenges were answered. However, I'm still struggling with:</p>
+<ul>
+  <li>Correct the bug of not having the animation from 0,0 to 0,1, etc</li>
+  <li>Making it responsive - Almost there, should've used the mobile-first approach</li>
+</ul>
 
 
 Thank you for reading!!!
