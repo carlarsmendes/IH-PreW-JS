@@ -22,11 +22,12 @@
 <h3><b>---Major challenges---</b></h3>
 
 <ul>
-  <li>Took me a while to figure out the swicth function and how to get passed not being able to visualize the rover</li>
+  <li>Took me a while to figure out the switch function and how to get passed not being able to visualize the rover</li>
   <li>The pre-work didn't include DOM manipulation so I had to do it by myself and with Google's help - Wasn't easy but it was an amazing challenge</li>
   <li>The Object oriented train of thought was hard to get into</li>
   <li>The amount of code and how to organize myself</li>
   <li>Not knowing yet very well how to manage Ubuntu, Visual Studio Code, and debug.</li>
+  <li>Making it responsive - Almost there, should've used the mobile-first approach</li>
 </ul>
 
 <h3><b>---Improvements for the future---</b></h3>
